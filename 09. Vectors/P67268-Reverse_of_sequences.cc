@@ -7,16 +7,8 @@ int main() {
     while (cin >> n) {
         vector<int> v(n);
         for (int k = 0; k < n; k++) cin >> v[k];
-        int aux;
-        for (int i = 0; i < n/2; i++) {
-            aux = v[i];
-            v[i] = v[n-i-1];
-            v[n-i-1] = aux;
-        }
-        for (int j = 0; j < n; j++) {
-            cout << v[j];
-            if (j != n-1) cout << " ";
-        }
+        if (n > 0) cout << v[n - 1]; // Imprimeix l'últim element (si existeix).
+        for (int i = n - 2; i >= 0; --i) cout << " " << v[i]; // Imprimeix la resta, en ordre invers.
         cout << endl;
     }
 }
